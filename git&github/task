@@ -1,1 +1,26 @@
+CREAtING GIT AND GITHUB ACCOUNT AND HANDS ON
+practicing the essential Git and GitHub commands and concepts taught by Shubham Bhaiya
 
+CHALLENGE TASKS
+01.Fork and clone the repository
+-forking the 90daysofdevops from shubhamlonde 
+-CHECKING IN MY LOCAL GITHUB REPOSITORY AND ADDING ALL THE TASK IN THAT REPOSITORY NAMED AS SOLUTION 
+
+02.Initialize a Local Repository and Create a File (ALL THE TASK IN DONE IN MY LOCAL TERMINAL)
+-SETTING UP MY OWN DIRECTORY 
+-Initialzing a gir repo in it.
+-created a file.
+-stage and commiting my repo and file.
+
+03. Configure Remote URL with PAT and Push/Pull
+- Configuring the remote url with my PAT.
+(step by step procedure)
+-pushing/pulling  the commit file to remote github and vicevers.
+
+04.Exploring my history of all committing 
+-git logs
+-creating new branchs
+-swtiching branches
+
+Bouns task : Exploring the SSH Authentication for more easily pushing and pulling the git repo
+CREATING THE PULL REQUESTIN GITHUB
