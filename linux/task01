@@ -1,1 +1,22 @@
+User & Group Management
+
+ Learn about Linux **users, groups, and permissions** (`/etc/passwd`, `/etc/group`).
+
+- creating user (devops-user) and added it in group (devops-team)
+
+ sudo useradd -m "username"
+ sudo groupadd "groupname"
+  set password in user
+  - sudo passwd "username"
+ add user to group
+ sudo usermod -a -G groupname username
+  
+Additional 
+ switching user/ rename user 
+ su - useranme 
+ sudo usermod -l newname oldname
+
+sudo usermod -l newname oldname             # Rename user
+sudo mv /home/oldname /home/newname         # Rename home directory
+sudo usermod -d /home/newname -m newname    # Update user home path
 
