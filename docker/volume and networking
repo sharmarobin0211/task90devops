@@ -1,0 +1,34 @@
+(images of vola and network)
+
+Docker Volumes and Networking 
+Docker Volumes & Networks: Persistent Storage and Seamless Container Communication.
+
+Docke Volumes
+Simple Explanation:
+Persistent storage in Docker. Data stays even if the container is deleted.file:
+
+reason: Good for databases or saving app data.
+
+  Command :- docker run -v <destination>:<source> pathname
+  Explanation: Mounts the volume mydata at /data inside the container.
+  (#image vol)
+
+Docker Networking 
+Simple Explanation:
+Docker containers can talk to each other over a virtual network.
+reason: Helps microservices communicate.
+
+Types:
+-bridge (default)
+-host
+-none
+-custom networks (for inter-container DNS)
+
+  Command :- docker run -d --network==(user defined network) pathname
+  Explaination: before adding network to docker run 
+   First create network
+   Also check gateways & container which before adding and docker image in that container.
+
+  (#images)
+
+  
