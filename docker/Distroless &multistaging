@@ -1,0 +1,35 @@
+ADVANCED DOCKER CONCEPTS
+STARTING DOCKER ADVANCED WITH DISTROLESS AND MULTI-STAGING CONCEPTS
+
+Multi-stage Builds
+Simple Explanation:
+You use multiple FROMs in a Dockerfile to separate build from the final image, making it smaller.
+
+CODE AS EXAMPLE (python flask-app)
+  # Stage 1: build
+    FROM python:3.9-alpine AS BUILDER
+    WORKDIR /app
+    COPY ..
+    RUN pip install --no-cache-dig -r requirements.txt--target=/app/dep
+
+  # Stage 2:
+    FROM gcr.io/distroless/python-3.9-debian12
+    WORKDIR /app
+    COPY --from=builder /app/dep /app/dep
+    COPY --from=builder . .
+
+    ENV PYTHONPATH="app/dep"
+    EXPORSE =80 (Port no.)
+
+    CMD = ["run.py"]
+    ###reason: Keeps only what you need for running the app—no compilers, build tools, etc.
+
+"Distroless" Container Images.
+"Distroless" images contain only your application and its runtime dependencies. They do not contain package managers, 
+ shells or any other programs you would expect to find in a standard Linux distribution.
+
+  Why should I use distroless images?
+  Restricting what's in your runtime container to precisely what's necessary for your app is a best practice employed by Google and other tech giants 
+  that have used containers in production for many years. It improves the signal to noise of scanners (e.g. CVE) and reduces the burden of establishing 
+  provenance to just what you need.Distroless images are very small. The smallest distroless image, gcr.io/distroless/static-debian12, is around 2 MiB. That's 
+  about 50% of the size of alpine (~5 MiB), and less than 2% of the size of debian (124 MiB).
